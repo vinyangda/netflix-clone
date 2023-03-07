@@ -1,13 +1,16 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import MovieDetail from "./pages/MovieDetail";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Movies />} />
