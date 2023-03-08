@@ -1,6 +1,7 @@
 import React from "react";
 
-const Banner = () => {
+const Banner = ({ movie }) => {
+  console.log("movie???:", movie);
   return (
     <div>
       <div>Banner</div>

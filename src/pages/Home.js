@@ -19,6 +19,8 @@ const Home = () => {
   //useEffect가 읽어 올 props의 정보를 받아 올 수 없었다.
 
   //useEffect의 조건부 렌더링이 필요하다
+  //Redux를 사용하는 이유는 props를 안 쓰기 위해서가 아닌
+  // 모든상황에서 props를 사용하는 걸 막기 위해 사용하는 것!
 
   return (
     <div>
