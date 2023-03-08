@@ -14,9 +14,15 @@ const Home = () => {
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
+
+  //정보를 받아오기도 전에 컴포넌트가 먼저 렌더가 되어
+  //useEffect가 읽어 올 props의 정보를 받아 올 수 없었다.
+
+  //useEffect의 조건부 렌더링이 필요하다
+
   return (
     <div>
-      <Banner movie={popularMovies.results[0]} />
+      {popularMovies.results && <Banner movie={popularMovies.results[0]} />}
     </div>
   );
 };
