@@ -5,6 +5,7 @@ import { movieAction } from "../redux/action/movieAction";
 
 const Home = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(movieAction.getMovies());
   }, []);
