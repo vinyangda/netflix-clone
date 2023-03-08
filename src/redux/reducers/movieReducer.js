@@ -4,15 +4,15 @@ let initialState = {
   upComingMovies: {},
 };
 
-function movieReducer(state, action) {
+function movieReducer(state = initialState, action) {
   let { type, payload } = action;
   switch (type) {
     case "GET_MOVIES_SUCCESS":
       return {
         ...state,
-        popularMovies: payload.popularMovies.data,
-        topRatedMovies: payload.topRatedMovies.data,
-        upComingMovies: payload.upComingMovies.data,
+        popularMovies: payload.popularMovies,
+        topRatedMovies: payload.topRatedMovies,
+        upComingMovies: payload.upComingMovies,
       };
     default:
       return { ...state };
