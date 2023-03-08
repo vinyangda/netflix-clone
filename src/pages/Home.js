@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Banner />
+      <Banner movie={popularMovies.results[0]} />
     </div>
   );
 };
