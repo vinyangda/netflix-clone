@@ -14,9 +14,22 @@ function getMovies() {
     const upComingApi = api.get(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
     );
-    let data = await Promise.all([popularMovieApi]);
+    let [popularMovies, topRatedMovies, upComingMovies] = await Promise.all([
+      popularMovieApi,
+      topRateApi,
+      upComingApi,
+    ]);
+    dispatch({
+      type: "GET_MOVIES_SUCCESS",
+
+      payload: {
+        popularMovies: popularMovies.data,
+        topRatedMovies: topRatedMovies.data,
+        upComingMovies: upComingMovies.data,
+      },
+    });
     //api정보들을 병렬로 한꺼번에 불러준다 await으로 전체의 데이터를 불러온다
-    console.log(data);
+    // console.log(data);
     // let url = 'https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1'
     // let res = await fetch(url)
     // let data = await res.json()
