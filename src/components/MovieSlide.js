@@ -23,10 +23,6 @@ const responsive = {
 };
 const MovieSlide = ({ movies }) => {
   return (
-    // <Carousel responsive={responsive}>
-    //   <MovieCard />
-    // </Carousel>
-
     <Carousel responsive={responsive}>
       {movies.results.map((item) => (
         <MovieCard key={movies.results.length} item={item} />

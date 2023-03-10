@@ -10,11 +10,6 @@ const MovieCard = ({ item }) => {
           `https://www.themoviedb.org/t/p/w355_and_h200_multi_faces${item.poster_path}` +
           ")",
       }}
-
-      //   style={{
-      //     backgroundImage:
-      //       "url(`https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/qKHjFK5tae0elB4zaDmicmjb5qI.jpg`)",
-      //   }}
     ></div>
   );
 };
