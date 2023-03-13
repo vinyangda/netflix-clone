@@ -16,11 +16,14 @@ function getMovies() {
       const upComingApi = api.get(
         `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
       );
-      let [popularMovies, topRatedMovies, upComingMovies] = await Promise.all([
-        popularMovieApi,
-        topRateApi,
-        upComingApi,
-      ]);
+      const gerneApi = api.get(
+        `genre/movie/list?api_key=${API_KEY}&language=en-US`
+      );
+      let [popularMovies, topRatedMovies, upComingMovies, gerneList] =
+        await Promise.all([popularMovieApi, topRateApi, upComingApi, gerneApi]);
+
+      console.log("gerneList", gerneList);
+
       dispatch({
         type: "GET_MOVIES_SUCCESS",
 
@@ -28,6 +31,7 @@ function getMovies() {
           popularMovies: popularMovies.data,
           topRatedMovies: topRatedMovies.data,
           upComingMovies: upComingMovies.data,
+          gerneList: gerneList.data.genres,
         },
       });
     } catch (error) {
