@@ -22,6 +22,7 @@ function App() {
 
 export default App;
 
+//
 //HomePage, moviePage, movieDtailePage
 
 // HomePage

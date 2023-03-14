@@ -44,8 +44,8 @@
 }
 
 .card:hover .overlay {
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
   opacity: 1;
   background-color: rgba(35, 35, 35, 0.351);
 }
